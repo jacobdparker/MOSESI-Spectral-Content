@@ -1,0 +1,27 @@
+\documentclass[preprint]{aastex63}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,shadows.blur,decorations.pathreplacing}
+\usepackage{etoolbox}
+\usepackage{amsmath}
+\usepackage{acronym}
+\graphicspath{{figures/}}
+
+\usepackage{natbib}
+\bibliographystyle{aasjournal}
+
+% https://tex.stackexchange.com/questions/192610/use-emulateapj-aastex-with-siunitx
+\usepackage{savesym}
+\savesymbol{tablenum}
+\usepackage{siunitx}
+\usepackage{ulem} 
+\restoresymbol{SIX}{tablenum}
+% \DeclareSIUnit{\photon}{\gamma}
+
+
+\begin{document}
+    \input{ParkerKankelborg2018}
+	\bibliography{ParkerKankelborg2018}
+\end{document}
+
