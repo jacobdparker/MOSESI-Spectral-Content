@@ -312,7 +312,8 @@
 		 	\label{eqn:cross_correlate}
 	 	\end{equation}
         
-	 	where $\mathcal{F}_x$ is the Fast Fourier Transform (FFT) operator applied along image rows.  
+	 	where $\mathcal{F}_x$ is the Fast Fourier Transform (FFT) operator applied along image rows.
+	 	\jdp{We might need to call this something}  
 	 	The MOSES image rows were padded with zeros, prior to applying the FFT to minimize edge effects.   	
 		This yields a one dimensional cross-correlation function for each row of the MOSES difference images.  
 		Since we are concerned mostly with bulk spectral content we then take the mean of all 1024 cross-correlation functions, one for each row, to get our final correlation curve plotted in red in Figure \ref{fig:sigtest}. 
