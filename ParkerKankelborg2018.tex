@@ -34,8 +34,8 @@
 	MOSES is a slitless spectrograph that forms images in multiple spectral orders using a concave diffraction grating in an effort to measure line profiles over a wide field of view from a single exposure.
 	Early work on MOSES data showed evidence of solar features composed of neither \heii \ or the nearby \sixi \ spectral lines.
 	We have built a forward model that uses co-temporal EIT images and the Chianti atomic database to fit synthetic images with known spectra to the MOSES data in order to quantify this additional spectral content.
-	Our fit reveals a host of dim lines that alone are insignificant but combined contribute a comparable intensity to MOSES images as \sixi.
-	In total, lines other than \heii\ and \sixi\ contribute approximately 10 percent of the total intensity in the MOSES zero order image.
+	Our fit reveals a host of dim lines that alone are insignificant but combined contribute an intensity to the MOSES images comparable to \sixi.
+	Combined, lines other than \heii\ and \sixi\ contribute approximately 10 percent to the total intensity of the MOSES zero order image.
 	This additional content, if not properly accounted for, could significantly impact the analysis of MOSES and similar slitless spectrograph data, especially those using a zero order image. 
 \end{abstract}
 
@@ -50,11 +50,12 @@
 	The data from these instruments, sometimes called overlapograms, have spatial and spectral information overlapped in the dispersive direction.
 	Slitless spectrographs often image in multiple spectral orders, each with a different blend of spatial and spectral information, that can be combined and ``inverted'' to form a spectrally resolved image of the sun at every exposure.
 	By doing so these instruments trade spatial and spectral resolution for much higher cadence.
-
+    
 	Slitless spectrographs have been used infrequently for decades to image the sun.
 	Only two satellite missions have routinely captured solar slitless spectrograph data: The S082A instrument on {\it Skylab} \citep{Tousey1973} and the Res-K instrument of the Russian KRONOS-I mission \citep{Zhitnik1998}, though others have been recently developed and proposed \citep{winebarger2019,golub2020}. 
 	Additionally, the currently-operating Extreme-ultraviolet Imaging Spectrograph (EIS; \citet{culhane2007}) on the {\it Hinode} mission \citep{kosugi2007} includes 40$^{\prime\prime}$ and 266$^{\prime\prime}$ slots that can produce overlappogram data.
 	Though EIS slot data are not often studied quantitatively, they have been used as a flare trigger and since analyzed to aid in interpretation of impulsive phase of solar flares \citep{harra2017,harra2020}.
+	\jdp{Taken from the mission paper and slightly edited. Might need a little something.}
  
 	The Multi-Order Solar Extreme Ultraviolet Spectrograph (MOSES) is a sounding rocket based slitless spectrograph that was launched for the first time from White Sands Missile Range on February 8th, 2006.
 	The primary science goal of MOSES was to measure line profiles in \heii \ over a wide field of view ($\approx$ 20$^{\prime}$x10$^{\prime}$), at every exposure.
@@ -266,6 +267,7 @@
         These example cross-correlations show two main peaks in correlation that are due to the auto-correlation of bright He\,{\sc ii} features, and not spectral contamination.  
         This would also be the case when cross-correlating $I_{+1}$ and $I_{-1}$.  
         By taking the difference we remove stationary He\,{\sc ii} objects (Figure \ref{fig:methods2}d and \ref{fig:methods2}e) and, in turn, their autocorrelation from the cross-correlation function (Figure \ref{fig:methods2}f), leaving only peaks in correlation from features not of \heii.
+        \jdp{think more about normalizing by the std, covariance}
  	
         The cross-correlation of two difference images along their rows is defined to be,
         \begin{equation}
