@@ -1,44 +1,8 @@
-
-
-\newcommand{\cck}[1]{{\color{red} CCK: #1}} % CCK comment
-\newcommand{\jdp}[1]{{\color{blue} JDP: #1}} % JDP comment
-
-% #1- element #2- ionization state #3 -wavelength in angstroms
-\newcommand{\spectralline}[3]{#1\,{\textsc{#2}}\ #3\,\AA } 
-\newcommand{\heii}{\spectralline{He}{ii}{303.8}}
-\newcommand{\sixi}{\spectralline{Si}{xi}{303.3}}
-\newcommand{\fexv}{\spectralline{Fe}{xv}{284}}
-\newcommand{\fexvi}{\spectralline{Fe}{xvi}{335}}
-
-\newcommand{\sixipix}{15.7}
-\newcommand{\spectdispersvel}{$\approx30$\,km\,s$^{-1}$ per pixel}
-\newcommand{\spectdisperspix}{$\approx29$\,m\AA\ per pixel}
-
 % Notes on Iron lines:
 %171 = Fe IX 5.9
 %195 = Fe XII 6.2 
 %284 = Fe XV 6.3
 %335 = Fe XVI 6.3
-
-
-\title{Determining the Spectral Content of MOSES Images}
-
-\author[0000-0001-8732-8284]{Jacob D. Parker}
-\affiliation{Montana State University}
-\author[0000-0002-1992-7469]{Charles Kankelborg}
-\affiliation{Montana State University}
-
-
-\begin{abstract}
-	The Multi-Order Solar Extreme Ultraviolet Spectrograph (MOSES) sounding rocket was launched from White Sands Missile Range on February 8th, 2006 to capture images of the sun in the \heii \ emission line.
-	MOSES is a slitless spectrograph that forms images in multiple spectral orders using a concave diffraction grating in an effort to measure line profiles over a wide field of view from a single exposure.
-	Early work on MOSES data showed evidence of solar features composed of neither \heii \ or the nearby \sixi \ spectral lines.
-	We have built a forward model that uses co-temporal EIT images and the Chianti atomic database to fit synthetic images with known spectra to the MOSES data in order to quantify this additional spectral content.
-	Our fit reveals a host of dim lines that alone are insignificant but combined contribute a comparable intensity to MOSES images as \sixi.
-	In total, lines other than \heii\ and \sixi\ contribute approximately 10 percent of the total intensity in the MOSES zero order image.
-	This additional content, if not properly accounted for, could significantly impact the analysis of MOSES and similar slitless spectrograph data, especially those using a zero order image. 
-\end{abstract}
-
 
 \section{Introduction}\label{sec:intro}
 	
