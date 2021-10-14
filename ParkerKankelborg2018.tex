@@ -31,9 +31,9 @@
 	
 	Early work with MOSES images revealed faint solar features when subtracting different spectral orders, as well as in the residuals while inverting, that could not be attributed to \heii.
 	These features could not be attributed to the most obvious sources of spectral contamination, including the nearby \sixi, or two bright Iron lines, \fexv\ and \fexvi.
-	The periodic multi-layer coatings used on the MOSES primary and secondary optics were designed to allow for optimal throughput at 304\,\AA \ but to suppress the close Iron lines, \fexv\ and \fexvi, as much as possible \citep{Owens2005} making them an unlikely source of contamination.
+	The periodic multilayer coatings used on the MOSES primary and secondary optics were designed to allow for optimal throughput at 304\,\AA \ but to suppress the close Iron lines, \fexv\ and \fexvi, as much as possible \citep{Owens2005} making them an unlikely source of contamination.
 	Moreover, if much of the contamination were attributable to one of these strong lines, then the contaminant features should appear twice in the difference images: once at the correct location on the Sun, and then in inverted intensity at a predictable offset; yet such a pattern was not observed \citep{Fox2011}.
-	\sixi, which is too close in wavelength to be removed by the MOSES multi-layer coating was always expected to be a contamination source in the data.
+	\sixi, which is too close in wavelength to be removed by the MOSES multilayer coating was always expected to be a contamination source in the data.
 	With a spectral dispersion of \spectdisperspix\ (\spectdispersvel), features in \sixi \ are dispersed roughly \sixipix\ pixels from \heii \ and therefore are easily distinguishable features in \heii.
 	Therefore these unexpected solar features must be from emission at dimmer and less obvious wavelengths in the MOSES passband.
 	In this paper we identify and quantify the sources of spectral contamination in the MOSES images.
@@ -51,17 +51,17 @@
 
 %	Sticking this here for now:
 %	
-%	The MOSES wavelength passband is defined by its diffraction grating and periodic multi-layer mirror coatings.
+%	The MOSES wavelength passband is defined by its diffraction grating and periodic multilayer mirror coatings.
 %	The primary grating of MOSES causes some wavelength selection in the outboard orders, but none in the central order.
 %	Even in the outboard orders, the MOSES grating alone, with a spectral dispersion of \spectdisperspix, is insufficient to isolate \heii \ from its near neighbors, the brightest being \sixi, \fexv, and \fexvi.
-%	To further isolate \heii\ in the outboard orders, and define a passband for the zeroth order, MOSES uses a narrowband metallic multi-layer coating on both the primary grating and secondary fold flat optics.
+%	To further isolate \heii\ in the outboard orders, and define a passband for the zeroth order, MOSES uses a narrowband metallic multilayer coating on both the primary grating and secondary fold flat optics.
 %	
-%	Metallic multi-layer coatings are almost ubiquitous in normal incidence solar EUV telescopes \citep{Windt2015}, the most notable current example being the Atmospheric Imaging Assembly \citep[AIA:][]{lemen2011} onboard the Solar Dynamics Observatory (SDO).
-%	Periodic multi-layers provide excellent reflectivity and narrow enough passbands for imaging isolated and bright EUV spectral lines.
-%	Despite their high performance, current technology only allows periodic multi-layers to be so narrow, allowing non-negligible contributions from other lines in the instrument passband \citep{AIA-Response}.
+%	Metallic multilayer coatings are almost ubiquitous in normal incidence solar EUV telescopes \citep{Windt2015}, the most notable current example being the Atmospheric Imaging Assembly \citep[AIA:][]{lemen2011} onboard the Solar Dynamics Observatory (SDO).
+%	Periodic multilayers provide excellent reflectivity and narrow enough passbands for imaging isolated and bright EUV spectral lines.
+%	Despite their high performance, current technology only allows periodic multilayers to be so narrow, allowing non-negligible contributions from other lines in the instrument passband \citep{AIA-Response}.
 %	
-%	The MOSES multi-layer coatings were designed to allow for optimal throughput at 304\,\AA \ but to suppress the close Iron lines, \fexv\ and \fexvi, as much as possible \citep{Owens2005}.
-%	The next closest bright line to \heii\ is \sixi, which is too close in wavelength to be removed by the MOSES multi-layer coating.
+%	The MOSES multilayer coatings were designed to allow for optimal throughput at 304\,\AA \ but to suppress the close Iron lines, \fexv\ and \fexvi, as much as possible \citep{Owens2005}.
+%	The next closest bright line to \heii\ is \sixi, which is too close in wavelength to be removed by the MOSES multilayer coating.
 %	\sixi\ was always expected to be a contamination source in the data.
 %	With a spectral dispersion of \spectdisperspix\ (\spectdispersvel), features in \sixi \ are dispersed roughly \sixipix\ pixels from \heii \ and therefore are easily distinguishable from even the fastest events in \heii.
 
@@ -134,6 +134,7 @@
  	
  	 	\begin{figure}
  	 		\center
+ 	 		\resizebox{!}{7.25in}{
 			\begin{tikzpicture}
 			\newcommand{\toprow}{6.5}
 			\newcommand{\columntwo}{8.5}
@@ -155,7 +156,7 @@
 			\node[inner sep=0pt](cc1) at (\columntwo/2,\toprow/2)
 			{$\boldsymbol{\bigotimes}$};
 			\node[inner sep=0pt](cc2) at (\columntwo/2,-\toprow/2)
-{           $\boldsymbol{\bigotimes}$};
+			{$\boldsymbol{\bigotimes}$};
 
 			
 			%lets try drawing some lines between them.
@@ -172,12 +173,14 @@
 				\tiny{$\bigotimes$ = Cross-Correlation}\\
 				\end{tabular}};
 			\end{tikzpicture}
+			}	
  	 		\caption{Example 1D MOSES row in the $m$ = 1 (a), 0 (b), and -1 (c) spectral orders followed by the cross correlation of $m$=1 and 0 (d) and the cross-correlation of $m$ = -1 and 0 (e).  The cross-correlation of any two MOSES orders is dominated by the autocorrelation of stationary He\,{\sc ii} features and background making them less useful in identifying spectral content. The strong peaks in correlation at $\pm$250 pixels are the result of the two bright He\,\textsc{ii} features at 0 and 250 overlapping.}
  	 		\label{fig:methods1}
  	 	\end{figure}
  	 	
  	 	\begin{figure}
  	 		\center
+ 	 		\resizebox{!}{7.25in}{
  	 		\begin{tikzpicture}
  	 		\newcommand{\toprow}{6.5}
  	 		\newcommand{\columntwo}{8.5}
@@ -208,7 +211,6 @@
  	 		\node[inner sep=0pt](t2) at (\columntwo+4.2,-\toprow)
  	 		{};
  	 		
- 	 		
  	 		%lets try drawing some lines between them.
  	 		\draw[->] (fig1.north east) -- (dif1.south);
  	 		\draw[->] (fig2.east) -- (dif1.west);
@@ -224,7 +226,7 @@
  	 		\draw[->] (t2) -- (fig8.east);
 
  	 		%draw a symbol legend
- 	 		\node(align)[draw] at (4,-9.9) {
+ 	 		\node(align)[draw] at (4,-10.2) {
  	 			\begin{tabular}{l}
  	 			\tiny{$\bigotimes$ = Cross-Correlation} \\
  	 			\tiny{$\boldsymbol{\bigtriangleup}$ = Difference}
@@ -232,6 +234,7 @@
  	 		
  	 		
  	 		\end{tikzpicture}
+ 	 		}
  	 		\caption{Example MOSES rows in $m = 1$ (a), 0 (b), and $-1$ (c) spectral orders.  Two difference images, $m=1$ minus $m=0$ (d) and $m=-1$ minus $m=0$ (e) are cross-correlated (e).  Taking a difference removes stationary He\,{\sc ii} features so that peaks in cross-correlation are indicative of extra spectral content.  Even in this simple example one cannot read off the spectral content of the MOSES images, demonstrating the need for a forward model.}
  	 		\label{fig:methods2}
  	 	\end{figure}
@@ -458,7 +461,7 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 		Using the Chianti database we generate a synthetic line list using a constant log pressure of 15\,K\,cm$^{-3}$, Feldman coronal abundance \citep{FeldmanAbund}, and a flat log DEM, $\text{log DEM}(T) = 1\,\text{cm}^{-5}\,\text{K}^{-1}$.
 		Leaving the line list unsummed in temperature gives the intensity as a function of temperature for each spectral line in the passband, G$_{\lambda T}$.
 		Combining G$_{\lambda T}$ with $\xi_{xyT}$ and the wavelength dependent MOSES throughput, $\alpha_{m\lambda}$, yields an image for every spectral line at every temperature, $I'_{xy\lambda T}$.
-		The MOSES throughput is defined by the periodic metallic multi-layer coatings on the MOSES primary and secondary optics, as well as the thin film aluminum filters just before the detector.
+		The MOSES throughput is defined by the periodic metallic multilayer coatings on the MOSES primary and secondary optics, as well as the thin film aluminum filters just before the detector.
 		
 		The MOSES grating has a spectral dispersion of $\delta =$ \spectdisperspix.
 		Therefore in order to produce a set of images for each of the three MOSES spectral orders, $m = -1,0,1$, line images, $I'_{xy\lambda T}$, must be shifted along x.
@@ -472,7 +475,7 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 		This gives 3 synthetic MOSES images from which we can form difference images and cross correlate (Equation \ref{eqn:cross_correlate}).
 		Using each temperature bin of the DEM as a free parameter, we seek to minimize the least squares difference between synthetic and MOSES mean cross-correlation function, yielding closely matching synthetic MOSES data with known spectral content.
 		
-		When comparing out synthetic data to MOSES we slightly blur each MOSES image prior to taking the difference and cross-correlating using a normalized Gaussian kernel with a standard deviation of four pixels.
+		When comparing our synthetic data to MOSES we slightly blur each MOSES image prior to taking the difference and cross-correlating using a normalized Gaussian kernel with a standard deviation of four pixels.
 		This ensures small scale features in the MOSES images (that aren't indicative of spectral contamination) don't impact the fit.
 		During testing it was found that the width of the kernel used had little impact on the final results (a few percent difference in final spectral content), therefore a standard deviation of 4 pixels was chosen based on a factor of $\approx$4 difference in resolution between EIT and MOSES, and visual comparison of small scale features in the resulting, blurred, difference images.
 		
@@ -557,7 +560,7 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 \section{Discussion and Conclusions}\label{sec:conclusion}
 
 	MOSES was successful in its goal of capturing solar images in the \heii \ emission line.
-	Despite the use of a narrowband multi-layer coating on both the primary and secondary optics, MOSES captured several solar features not easily attributed to the dominant \heii \ or nearby strong \sixi \ lines.
+	Despite the use of a narrowband multilayer coating on both the primary and secondary optics, MOSES captured several solar features not easily attributed to the dominant \heii \ or nearby strong \sixi \ lines.
 	In order to identify and quantify the spectral content of these additional features we cross-correlated two MOSES difference images and identified peaks in correlation as significant and indicative of spectral contamination.
 	Using a forward model that combines four co-temporal EIT images with synthetic spectra from Chianti we created synthetic MOSES difference images with known spectral content that could be cross-correlated and compared to the MOSES difference image cross-correlation function.
 	By varying the DEM used we modified the spectral content of the synthetic MOSES data until we minimized the differences between the synthetic and real cross-correlation functions, the results of which are displayed in Section \ref{sec:results}.
