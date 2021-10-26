@@ -11,7 +11,7 @@
 	Slit spectrographs take a very narrow strip of the sun and disperse the light emitted using a diffraction grating, providing high spectral resolution over a very small spatial field of view.
 	Spectrally resolved images are then built by rastering the slit over a region of interest, requiring a full exposure at every position, which can take on the order of hours to cover a large portion of the solar disk.
 	
-	An alternative approach is to remove the slit, a \emph{slitless} spectrograph.
+	An alternative approach is to remove the slit, producing a \emph{slitless} spectrograph.
 	Slittless spectrographs disperse an image over a larger field of view.
 	The data from these instruments, sometimes called overlapograms, have spatial and spectral information overlapped in the dispersive direction.
 	Slitless spectrographs often image in multiple spectral orders, each with a different blend of spatial and spectral information, that can be combined and ``inverted'' to form a spectrally resolved image of the sun at every exposure.
@@ -21,7 +21,7 @@
 	Only two satellite missions have routinely captured solar slitless spectrograph data: The S082A instrument on {\it Skylab} \citep{Tousey1973} and the Res-K instrument of the Russian KRONOS-I mission \citep{Zhitnik1998}.
 	These two instruments have informed the recent development and proposal of another 
 	full disk slitless spectrograph, the COronal Spectroscopic Imager in the EUV  \citep[COSIE:][]{winebarger2019,golub2020}.
-	The currently operating Extreme-ultraviolet Imaging Spectrograph \citep[EIS:][]{culhane2007}) on the {\it Hinode} mission \citep{kosugi2007} includes 40$^{\prime\prime}$ and 266$^{\prime\prime}$ slots that can produce overlappogram that has been used in a limited number of quantitative studies \citep{harra2017,harra2020}.
+	The currently operating Extreme-ultraviolet Imaging Spectrograph \citep[EIS:][]{culhane2007}) on the {\it Hinode} mission \citep{kosugi2007} includes 40$^{\prime\prime}$ and 266$^{\prime\prime}$ slots that can produce an overlappogram that has been used in a limited number of quantitative studies \citep{harra2017,harra2020}.
 	In addition to these satellite missions several sounding rocket based slitless spectrographs have recently imaged the sun including The Multi-Order Solar Extreme ultraviolet Spectrograph \citep[MOSES:][]{Fox2011}, the Extreme ultraviolet Snapshot Imaging Spectrograph \citep[ESIS:][]{ESIS,Parker2021}, and the recently launched Marshall Grating Incident X-ray Spectrometer \citep[MaGIXS:][]{MaGIXS} that was flown with a $12' \times 33'$ slot.
 	
 	MOSES was launched for the first time from White Sands Missile Range on February 8th, 2006.
@@ -84,13 +84,13 @@
 		\begin{figure}
 			\centering
 			\includegraphics[width=\linewidth]{moses_dif}
-			\caption{Time averaged images for the m = 0 and 1 spectral orders (top row), followed by their difference, m = 1 minus m = 0.  Regions one through three, boxed in red, show regions of high spectral contamination. Dark features from the m = 0 order are adjacent to white smears with pixel shifts too large to be Doppler shifts.}
+			\caption{Time averaged images for the m = 0 and 1 spectral orders (top row), followed by their difference, m = 1 minus m = 0.  Regions one through three, boxed in red, show regions of high spectral contamination. Dark features from the m = 0 order are adjacent to yellow smears with pixel shifts too large to be Doppler shifts.}
 			\label{fig:moses_super}
 		\end{figure}
 	
 		
 		Identifying solar features in the MOSES data that originate at wavelengths different from \heii\ is simple. 
-		Subtracting $I_0$ (that contains no spectral dispersion) from either outboard order ($I_{+1}$ or $I_{-1}$) eliminates 303.8\,\AA\ features. 
+		Subtracting $I_0$ (that contains no spectral dispersion) from either outboard order ($I_{+1}$ or $I_{-1}$) eliminates stationary 303.8\,\AA\ features. 
 		What remains are bipolar features of various spatial scales along the dispersion direction, which is horizontal.  
 		A feature in the principle spectral line, \heii, with a nonzero line-of-sight (LOS) velocity is translated along image rows.    
 		MOSES has a spectral dispersion of \spectdispersvel, leading to a less than ten pixel shift for even the fastest LOS velocities in He\,{\sc ii}. 
@@ -101,8 +101,8 @@
 		Si\,{\sc xi} features can be seen just above the solar limb, where He\,\textsc{ii}\ has little to no contribution. 
 		The best example of this is region 3 boxed in red in Figure \ref{fig:moses_super}.  
 		Box 1 of Figure \ref{fig:moses_super}c has a large, coherent, negative feature dubbed the ``wishbone''.  
-		The wishbone is very solar in appearance and has no obvious positive counterpart.  
-		Close inspection reveals a white smear to its left that is likely a shifted wishbone in the plus order.  
+		The wishbone's smooth, large-scale morphology suggests a coronal feature. and has no obvious positive counterpart.  
+		Close inspection reveals a light smear to its left that is likely a shifted wishbone in the plus order.  
 		Unfortunately the positive portion of the wishbone is too blurry to quantify its shift by inspection. 
 		A previous study of these features by \citet{Rust2017} used a wavelet transform to isolate large scale features prior to taking the difference.  
 		That procedure allowed \citet{Rust2017} to roughly identify a contribution from \spectralline{Mg}{viii}{315}\ to regions 1 and 2.
@@ -123,7 +123,8 @@
 		EIT and MOSES were co-aligned by applying the affine coordinate transform to EIT 304\,\AA\ that maximized the zero-lag cross-correlation between it and the time averaged $m=0$ order image described in the proceeding subsection.
 		The same transform was then applied to the other three EIT channels.
 	 
-		At first glance one can find several features in the MOSES difference image (Figure \ref{fig:moses_super}) that resemble features in the EIT 171, 195, and 284 images (Figure \ref{fig:EIT}).  
+		At first glance one can find all features boxed in the MOSES difference images (Figure \ref{fig:moses_super}) in the EIT 171, 195, and 284 images (Figure \ref{fig:EIT}).
+		The wishbone (box 1) is clearly visible in 171 and 284, the small active regions (box 2) in 171, 195 and 284, and the bright feature at the limb (box 3) is seen most clearly in 195 and 284.
 		The presence of these features in MOSES data indicates a contribution of coronal spectral lines to an otherwise transition region image.  
 		While similarities between MOSES difference images and EIT images indicate the contribution of hotter lines to MOSES He\,{\sc ii} data, they do not straightforwardly tell how much, and by which lines.  
 		In Section \ref{sec:methods} we set out to quantify the intensity contributed by each source of spectral contamination in the MOSES image.
@@ -276,7 +277,7 @@
 		 peaks in correlation  at approximately $-1800$, $-500$, 250, 800, and 1500 pixel lags.  
 		 The largest peak in correlation is centered about zero lag and is quite broad.   
 		 While these features are identifiable, the curve is complicated enough that quantifying peaks in correlation visually is difficult and the significance of any given peak is questionable. 
-		 We therefore move to test the null hypothesis that none of these features are the due to spectral contamination but are instead the result of random fluctuations in the data. 
+		 We therefore move to test the null hypothesis that none of these features are due to spectral contamination but are instead the result of random fluctuations in the data. 
 		 We explore this null hypothesis in the next section by cross-correlating random data generated to emulate the scales present realistic solar features, such as those found in the MOSES image rows.
  
 	
@@ -424,9 +425,9 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 		These synthetic images can be cross-correlated in the same way and compared to the mean MOSES cross-correlation function. 
 		Synthetic MOSES images for each order $m$, $I'_{mxy}$, were created using the following procedure:
 			\begin{enumerate}
-				\item Form a DEM map, $\xi_{xyT}$, a DEM at every spatial pixel, from 4 co-temporal and co-aligned EIT images.
+				\item Form a map of differential emission measure (DEM), $\xi_{xyT}$, a DEM at every spatial pixel, from 4 co-temporal and co-aligned EIT images.
 				
-				\item Normalize $\xi_{xyT}$ to have unit emission measure averaged over the MOSES field of view at every temperature.
+				\item Normalize $\xi_{xyT}$ to have an average emission measure of unity over the MOSES field of view at every temperature.
 				
 				\item Calculate the contribution function, G$_{\lambda T}$, over the range log $T$ = 4-6.5\,K for each spectral line between 280\,\AA \ and 340\,\AA\ using a unit emission measure.
 				
@@ -454,8 +455,9 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 	
 		We calculate the DEM map, $\xi_{xyT}$, using \texttt{eit\_dem\_tool.pro} provided in Solar Soft which combines the four prepped EIT images described in Section \ref{sec:EIT_data} and gives a DEM for each pixel across the full EIT field of view.
 		To co-align $\xi_{xyT}$ to MOSES we apply the same transformation to each temperature image in the map that we applied to the EIT 304\,\AA\ channel when co-aligning to the MOSES zero order image.
-		We normalize the DEM map by its average DEM over the MOSES field of view because we are more concerned with the spatial distribution of intensity, at a given temperature, than the absolute DEM predicted by the code.
-		Also, starting with a normalized DEM map allows us to use a each temperature bin in the DEM as the free parameters in our fit.
+		We normalize the DEM map by its spatial average at each temperature over the MOSES field of view.
+		We do this because we are more concerned with the spatial distribution of intensity at a given temperature, than the absolute DEM predicted by the code.
+		Also, starting with a normalized DEM map allows us to use the average emission measure over the field of view at each temperature as the free parameters in our fit.
 
 		In order to create a synthetic MOSES image at each spectral order we must combine $\xi_{xyT}$ with spectral information.
 		Using the Chianti database we generate a synthetic line list using a constant log pressure of 15\,K\,cm$^{-3}$, Feldman coronal abundance \citep{FeldmanAbund}, and a flat log DEM, $\text{log DEM}(T) = 1\,\text{cm}^{-5}\,\text{K}^{-1}$.
