@@ -101,7 +101,7 @@
 		Si\,{\sc xi} features can be seen just above the solar limb, where He\,\textsc{ii}\ has little to no contribution. 
 		The best example of this is region 3 boxed in red in Figure \ref{fig:moses_super}.  
 		Box 1 of Figure \ref{fig:moses_super}c has a large, coherent, negative feature dubbed the ``wishbone''.  
-		The wishbone's smooth, large-scale morphology suggests a coronal feature. and has no obvious positive counterpart.  
+		The wishbone's smooth, large-scale morphology suggests a coronal feature and has no obvious positive counterpart.  
 		Close inspection reveals a light smear to its left that is likely a shifted wishbone in the plus order.  
 		Unfortunately the positive portion of the wishbone is too blurry to quantify its shift by inspection. 
 		A previous study of these features by \citet{Rust2017} used a wavelet transform to isolate large scale features prior to taking the difference.  
@@ -175,7 +175,7 @@
 				\end{tabular}};
 			\end{tikzpicture}
 			}	
- 	 		\caption{Example 1D MOSES row in the $m$ = 1 (a), 0 (b), and -1 (c) spectral orders followed by the cross correlation of $m$=1 and 0 (d) and the cross-correlation of $m$ = -1 and 0 (e).  The cross-correlation of any two MOSES orders is dominated by the autocorrelation of stationary He\,{\sc ii} features and background making them less useful in identifying spectral content. The strong peaks in correlation at $\pm$250 pixels are the result of the two bright He\,\textsc{ii} features at 0 and 250 overlapping.}
+ 	 		\caption{A cartoon example of a 1D MOSES row in the $m$ = 1 (a), 0 (b), and -1 (c) spectral orders followed by the cross correlation of $m$=1 and 0 (d) and the cross-correlation of $m$ = -1 and 0 (e).  The cross-correlation of any two MOSES orders is dominated by the autocorrelation of stationary He\,{\sc ii} features and background making it difficult to identify the additional spectral content. The strong peaks in correlation at $\pm$250 pixels are the result of the two bright He\,\textsc{ii} features at 0 and 250 overlapping.}
  	 		\label{fig:methods1}
  	 	\end{figure}
  	 	
@@ -236,7 +236,7 @@
  	 		
  	 		\end{tikzpicture}
  	 		}
- 	 		\caption{Example MOSES rows in $m = 1$ (a), 0 (b), and $-1$ (c) spectral orders.  Two difference images, $m=1$ minus $m=0$ (d) and $m=-1$ minus $m=0$ (e) are cross-correlated (e).  Taking a difference removes stationary He\,{\sc ii} features so that peaks in cross-correlation are indicative of extra spectral content.  Even in this simple example one cannot read off the spectral content of the MOSES images, demonstrating the need for a forward model.}
+ 	 		\caption{The same cartoon rows from Figure \ref{fig:methods1} are shown. Two possible differences between them, $m=1$ minus $m=0$ (d) and $m=-1$ minus $m=0$ (e) are cross-correlated (e).  Taking a difference removes stationary He\,{\sc ii} features so that peaks in cross-correlation are only from the extra spectral content.  Even in this simple 1-D example, assigning each peak to a contributing spectral line is difficult. This demonstrates the need for a forward model to interpret the average cross-correlation curve from the MOSES data.}
  	 		\label{fig:methods2}
  	 	\end{figure}
         
@@ -247,6 +247,7 @@
         These example cross-correlations show two main peaks in correlation that are due to the auto-correlation of bright He\,{\sc ii} features, and not spectral contamination.  
         This would also be the case when cross-correlating $I_{+1}$ and $I_{-1}$.  
         By taking the difference we remove stationary He\,{\sc ii} objects (Figure \ref{fig:methods2}d and \ref{fig:methods2}e) and, in turn, their autocorrelation from the cross-correlation function (Figure \ref{fig:methods2}f), leaving only peaks in correlation from features not of \heii.
+		
  	
         The cross-correlation of two difference images along their rows is defined to be
         \begin{equation}
@@ -273,12 +274,13 @@
 		 
 	 
 		 The mean cross-correlation curve for the MOSES difference image has a few notable features.  
-		 There are large%r 
-		 peaks in correlation  at approximately $-1800$, $-500$, 250, 800, and 1500 pixel lags.  
+		 There are large peaks in correlation  at approximately $-1800$, $-500$, 250, 800, and 1500 pixel lags.  
 		 The largest peak in correlation is centered about zero lag and is quite broad.   
-		 While these features are identifiable, the curve is complicated enough that quantifying peaks in correlation visually is difficult and the significance of any given peak is questionable. 
+		 While these features are identifiable, the curve is complicated enough that attributing a given peak to particular spectral content is difficult and the significance of any given peak is questionable. 
 		 We therefore move to test the null hypothesis that none of these features are due to spectral contamination but are instead the result of random fluctuations in the data. 
-		 We explore this null hypothesis in the next section by cross-correlating random data generated to emulate the scales present realistic solar features, such as those found in the MOSES image rows.
+		 We explore this null hypothesis in the Section \ref{sec:sigtesting} by cross-correlating random data generated to emulate the scales present realistic solar features, such as those found in the MOSES image rows.
+		 Once we have demonstrated the peaks in correlation are significant, we will use a forward model to generate synthetic MOSES images, with known spectral content, that can be cross-correlated and compared to the real MOSES images.
+		 Section \ref{sec:fomod} outlines this process and Section \ref{sec:results} discusses the results.
  
 	
 	\subsection{Significance Testing}\label{sec:sigtesting}
@@ -421,9 +423,12 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 		%The mean cross-correlation of MOSES difference image rows is shown in Figure \ref{fig:sigtest}.  
 		%In the proceeding \cck{(preceding?)} section  several peaks in correlation were deemed to be significant and indicative of spectral contamination in the MOSES  data.  
 		%These peaks have irregular, broad profiles and are both positive and negative.  
-		In order to interpret how these peaks in correlation relate to spectral content of the MOSES images we developed a forward model that produces synthetic MOSES difference images with known spectral content using the 4 co-temporal EIT images and Chianti.
+		In order to interpret how these peaks in correlation relate to spectral content of the MOSES images we developed a forward model that produces synthetic MOSES difference images with known spectral content using the four co-temporal EIT images and Chianti.
+		The four images from EIT are combined and used with a DEM tool to produce an image at each temperature from log $T$ = 4-6.5\,K in increments of log $T$ = .1K.
+		We then normalize each temperature image to have an average emission measure of unity over the MOSES field of view, leaving only the spatial distribution of intensity at each temperature.
+		The normalized DEM cube can then be prescribed an average DEM of our choice, the free parameter in our model, and put through a forward model of the MOSES instrument to produce synthetic MOSES images.
 		These synthetic images can be cross-correlated in the same way and compared to the mean MOSES cross-correlation function. 
-		Synthetic MOSES images for each order $m$, $I'_{mxy}$, were created using the following procedure:
+		More details on the creation of the synthetic MOSES images for each order $m$, $I'_{mxy}$, are described in the following procedure:
 			\begin{enumerate}
 				\item Form a map of differential emission measure (DEM), $\xi_{xyT}$, a DEM at every spatial pixel, from 4 co-temporal and co-aligned EIT images.
 				
@@ -492,7 +497,8 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 	\begin{figure}
 		\centering
 		\includegraphics[width=\linewidth]{fit_dem}
-		\caption{Best fit DEM used to generate the final synthetic MOSES images.}
+		\caption{Best fit DEM used to generate the final synthetic MOSES images.
+		}
 		\label{fig:dem}
 	\end{figure}
 
@@ -531,12 +537,22 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 	\end{figure}
 	\begin{table}
 		\begin{center}
+			\caption{Pixel Dispersion of Dominant Spectral Lines with Intensities Relative to \spectralline{He}{ii}{303.78}.}
+			\label{table:disperse}
+			%If thesis
+%			\input{MOSESI-Spectral-Content/spectral_content}
+			%Else
+			\input{spectral_content}
+	\end{center}
+	\end{table}
+	\begin{table}
+		\begin{center}
 			\caption{Average MOSES Image Spectral Content}
 			\label{table:spectral_content}
 			\begin{tabular}{l|r}
-				\hline
+				\toprule
 				Ion & Contribution \\
-				\hline
+				\midrule
 				He\,\textsc{ii} & 80.55\% \\
 				Si\,\textsc{xi} & 8.37\% \\
 				Mg\,\textsc{viii} & 4.14\% \\
@@ -544,10 +560,11 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 				Si\,\textsc{ix} & 1.33\% \\
 				Fe\,\textsc{xiii} & 1.29\% \\
 				Other & 1.67\% \\ 
-				\hline
+				\bottomrule
 			\end{tabular}
 		\end{center}
 	\end{table} 
+
 	
 	
 	Using the DEM of best fit we also generated an average spectrum for the MOSES data weighted by instrument's the wavelength dependent throughput (Figure \ref{fig:spectrum}).
@@ -555,6 +572,7 @@ The 10th percentile, median, and 90th percentile power spectra of both sets matc
 	MOSES images are dominated by the He\,\textsc{ii} doublet near 303.7\,\AA.
 	\sixi, while much dimmer than He\,\textsc{ii}, has the second highest intensity and represents approximately 8 percent of the total intensity.
 	The other notable, and unexpected contribution to the image intensity is from the host of lines between 310 and 320 angstroms, the brightest being from Mg\,\textsc{viii} and Si\,\textsc{viii}.
+	Table \ref{table:disperse} shows the 25 brightest lines observed by MOSES, their intensity relative to \spectralline{He}{ii}{303.78}, and their dispersion in pixels and arcsecond, making it easier to assign spectral content to features in the difference images.
 	Table \ref{table:spectral_content} shows the total intensity contribution from each of the brightest ions.  
 	
 
